@@ -9,19 +9,29 @@
 
 var array = [];
 function taomang(max) {
-    return Math.floor(Math.random() * max);
-}
-for (var i = 0; i < 10; i++) {
-    array.push(taomang(101));
-}
+    for (var i = 0; i <= 10; i++) {
+        var el = Math.floor(Math.random() * max);
+        array.push(el);
+    }
+};
 
 function xuatmang() {
-    console.log('các phần tử trong mảng là: ' + array);
-}
+    if (array.length === 0) {
+        console.log('mảng rống');
+    }
+    else {
+        console.log('các phần tử trong mảng là: ' + array);
+    }
+};
 
 function daomang() {
-    var newarr = array.slice().reverse();
-    console.log('Mảng sau khi đảo là: ' + newarr);
+    // var newarr = array.slice().reverse(); // slice để tạo 1 bản sao
+    // console.log('Mảng sau khi đảo là: ' + newarr);
+    var newArr = [];
+    for (var i = array.length - 1; i >= 0; i--) {
+        newArr.push(array[i]);
+    }
+    console.log('Mảng sau khi đảo là: ' + newArr);
 };
 
 function sapxepmang() {
@@ -29,6 +39,7 @@ function sapxepmang() {
     for (var i = 0; i < len - 1; i++) {
         for (var j = 0; j < len - i - 1; j++) {
             if (array[j] > array[j + 1]) {
+
                 var temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
@@ -65,7 +76,7 @@ var menu = `
 do {
     var input = prompt(menu);
     if (input === '1') {
-        taomang();
+        taomang(100);
         console.log('Tạo mảng thành công!');
     } else if (input === '2') {
         xuatmang();

@@ -13,7 +13,7 @@ console.log(arrNumber);
 
 var arrNumber = ['111', '222', '333', '444'];
 for (var i = 0; i < arrNumber.length; i++) {
-    if (arrNumber[i] == 444) {
+    if (arrNumber[i] === 444) {
         arrNumber.splice(i, 1, '555');
     }
 }
